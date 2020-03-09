@@ -5,7 +5,10 @@ resource "nsxt_policy_group" "group1" {
 
     criteria {
         ipaddress_expression {
-            ip_addresses = ["0.0.0.0"]
+            ip_addresses = ["0.0.0.0/0"]
+        }
+        ipaddress_expression {
+            ip_addresses = ["192.168.10.0/24"]
         }
     }
 }
