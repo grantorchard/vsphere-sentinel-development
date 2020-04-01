@@ -10,6 +10,12 @@ resource "nsxt_policy_group" "group1" {
     }
 }
 
+resource null_resource {
+  provisioner local-exec {
+    command = "echo TF_VAR_NSXT_PASSWORD"
+  }
+}
+
 /*
 resource "nsxt_policy_security_policy" "policy1" {
     display_name = "policy1"
