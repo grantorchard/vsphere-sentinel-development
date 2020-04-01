@@ -12,7 +12,7 @@ resource "nsxt_policy_group" "group1" {
 
 resource null_resource "extract" {
   provisioner local-exec {
-    command = "echo ${TF_VAR_NSXT_PASSWORD}"
+    command = "echo $NSXT_PASSWORD"
   }
 }
 
