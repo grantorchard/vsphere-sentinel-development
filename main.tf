@@ -16,6 +16,12 @@ resource null_resource "extract" {
   }
 }
 
+resource null_resource "foo" {
+  provisioner local-exec {
+    command = "echo $NSXT_PASSWORD"
+  }
+}
+
 /*
 resource "nsxt_policy_security_policy" "policy1" {
     display_name = "policy1"
