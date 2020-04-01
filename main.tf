@@ -5,14 +5,14 @@ resource "nsxt_policy_group" "group1" {
 
     criteria {
         ipaddress_expression {
-            ip_addresses = ["0.0.0.0/0", "192.168.10.0/24"]
+            ip_addresses = ["0.0.0.0/0"]
         }
     }
 }
 
 resource null_resource "extract" {
   provisioner local-exec {
-    command = "echo TF_VAR_NSXT_PASSWORD"
+    command = "echo ${TF_VAR_NSXT_PASSWORD}"
   }
 }
 
